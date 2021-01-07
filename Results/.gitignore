@@ -2,3 +2,4 @@
 # people can generate them by themselves
 benchmarking_script/
 theoretical_vs_simulated/
+.gitignore~
