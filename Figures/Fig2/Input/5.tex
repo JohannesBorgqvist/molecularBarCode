@@ -1,0 +1,23 @@
+\addplot[forget plot,densely dashed,color=orange,name path=down]coordinates {
+	(10000.0000	,	8.0167)
+	(20000.0000	,	15.3485)
+	(30000.0000	,	23.2296)
+	(40000.0000	,	30.6760)
+	(50000.0000	,	39.3977)
+};
+\addplot[forget plot,densely dashed,color=orange]coordinates {
+	(10000.0000	,	8.7229)
+	(20000.0000	,	16.3694)
+	(30000.0000	,	24.6208)
+	(40000.0000	,	31.7365)
+	(50000.0000	,	41.2653)
+};
+\addplot[forget plot,densely dashed,color=orange,name path=up]coordinates {
+	(10000.0000	,	10.2035)
+	(20000.0000	,	18.5593)
+	(30000.0000	,	28.3208)
+	(40000.0000	,	34.9886)
+	(50000.0000	,	46.1267)
+};
+\addplot[orange!50,opacity=0.1] fill between[of=up and down];
+\addlegendentry{5 CPU(s)}

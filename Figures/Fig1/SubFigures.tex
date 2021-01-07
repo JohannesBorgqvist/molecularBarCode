@@ -1,0 +1,94 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+\usepackage{pgfplots}
+\usepackage{amsmath,mathtools}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.17}
+\begin{document}
+% Picture 1: simulated data ZOOMED IN 
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=left, %xtick=\empty, ytick=\empty.
+    grid=both,
+    xmin = 3000,
+    xmax = 21000,
+    scaled x ticks = false,
+    xticklabel style = {font=\tiny},
+    xtick = {2000,4000,6000,8000,10000,12000,15000,18000,20000},
+    ytick = {1,...,15},
+    %xticklabels = {$2000$,$5000$,$10,000$,$20,000$,$30,000$,$40,000$},
+    ylabel style = {align=center},
+	xlabel = {Size of sample, $k$},
+        ylabel = {Number of repeated\\ sequences of length $r=2$},
+    legend style={at={(axis cs:3200,15)},anchor=west,cells={align=center},nodes={scale=1.5}},
+]
+% Include the simulated data
+\input{./Input/sim.tex}
+\end{axis}
+\end{tikzpicture}
+% Picture 2: Simulated data ALL DATA POINTS
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=left, %xtick=\empty, ytick=\empty.
+    grid=both,
+    scaled x ticks = false,
+    xticklabel style = {font=\tiny},
+    xtick = {2000,5000,10000,20000,30000,40000,50000},
+    %xticklabels = {$2000$,$5000$,$10,000$,$20,000$,$30,000$,$40,000$},
+    ylabel style = {align=center},
+	xlabel = {Size of sample, $k$},
+        ylabel = {Number of repeated\\ sequences of length $r=2$},
+    legend style={at={(axis cs:5000,80)},anchor=west,cells={align=center},nodes={scale=1.5}},
+]
+% Include the simulated data
+\input{./Input/sim.tex}
+\end{axis}
+\end{tikzpicture}
+% E_U
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=left, %xtick=\empty, ytick=\empty.
+    grid=both,
+    scaled x ticks = false,
+    xticklabel style = {font=\tiny},
+    scaled y ticks = false,
+    %yticklabel style = {font=\tiny},
+    ymax = 220,
+    ymin =0,
+    xmin = 3000,
+    xmax = 15000,
+    ytick = {10,20,30,40,50,75,100,125,150,175,200},
+    ylabel style = {align=center},
+	xlabel = {Size of sample, $k$},
+        ylabel = {Number of repeated\\ sequences of length $r=2$},
+    legend style={anchor=west,at={(axis cs:3500,180)},cells={align=center},nodes={scale=1.5}},
+]
+% Include the theoretical values
+%\input{./Input/E_L.tex} % Lower
+\input{./Input/E_U.tex} % Upper
+\end{axis}
+  \end{tikzpicture}
+% E_L
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=left, %xtick=\empty, ytick=\empty.
+    grid=both,
+    xmin = 3000,
+    xmax = 11000,
+    scaled x ticks = false,
+    xticklabel style = {font=\tiny},
+    xtick = {2000,4000,6000,8000,10000},
+    ylabel style = {align=center},
+	xlabel = {Size of sample, $k$},
+        ylabel = {Number of repeated\\ sequences of length $r=2$},
+    legend style={anchor=west,at={(axis cs:9000,0.7)},cells={align=center},nodes={scale=1.5}},
+]
+% Include the theoretical values
+\input{./Input/E_L.tex} % Lower
+%\input{./Input/E_U.tex} % Upper
+\end{axis}
+\end{tikzpicture}
+
+
+\end{document}

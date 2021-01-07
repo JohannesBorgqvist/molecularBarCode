@@ -1,0 +1,29 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+\usepackage{pgfplots}
+\usepackage{amsmath,mathtools}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.17}
+\begin{document}
+% Picture 1: simulated data ZOOMED IN 
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=left, %xtick=\empty, ytick=\empty.
+    grid=both,
+    ylabel style = {align=center},
+    scaled x ticks = false,
+    xlabel = {Size of sample, $k$},
+    ylabel = {Run time in seconds $[\mathrm{s}]$},
+    legend style={at={(axis cs:11000,45)},anchor=west,cells={align=center},nodes={scale=1.0}},
+]
+% Include the simulated data
+\input{./Input/1.tex}
+\input{./Input/3.tex}
+\input{./Input/5.tex}
+\end{axis}
+\end{tikzpicture}
+
+
+
+\end{document}
