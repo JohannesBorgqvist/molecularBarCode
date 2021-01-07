@@ -181,7 +181,7 @@ The solution algorithm was implemented so that the code was parallelised using m
 
 To deduce whether the implemented script could be rendered more efficient or not, the run time was investigated as a funtion of the number of CPUs implemented. Specifically, the previously described algorithm with $(n,r)=(4^{12},2)$ and ``$\textrm{num\_of\_repeats}=1000$'' was benchmarked five values of k, namely $k\in\left\{10000,20000,30000,40000,50000\right\}$. In order to obtain data sets of the execution times of the scripts, the solution algorithm was repeated $30$ times, and on these data sets the $5\%$-,$50\%$- and $95\%$- quantiles were plotted as functions of these $k$-values. The results (Fig \ref{fig:HPC}) show that the implemented levels of parallelisation (3 and 5 CPUs respectively) do not enhance the efficiency of the script in a meaningful way. Thus,in order to achieve a faster implementation this naive implementation has to be extended, and the main key in decreasing the runtime lies in increasing the efficiency in transferring the generated lists between the main process and the respective CPUs. Perhaps if one increases the number of repititions stored in the variable ``num\_of\_repeats'' perhaps one can see a more substantial improvements in the performance of the script as more random numbers are required implying that the script could benefit more from parallelisation.
 
-If one whishes to improve the code, it is just a matter of downloading the repositry at \url{github}
+If one whishes to improve the code, it is just a matter of downloading the repositry from \url{https://github.com/JohannesBorgqvist/molecularBarCode}. 
 
 \begin{figure}[htbp!]
   \begin{center}
